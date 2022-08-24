@@ -21,5 +21,26 @@ export const authorFilter = (author) => {
     }
 }
 
+export const clearSearchFilter = () => {
+    return {
+        type: CLEARSEARCHFILTER
+    }
+}
 
+export const clearCategoryFilter = () => {
+    return {
+        type: CLEARCATEGORYFILTER
+    }
+}
 
+export const clearAuthorFilter = () => {
+    return {
+        type: CLEARAUTHORFILTER
+    }
+}
+
+export const clearAllFilters = () => {
+    return {
+        type: CLEARALLFILTERS
+    }
+}
