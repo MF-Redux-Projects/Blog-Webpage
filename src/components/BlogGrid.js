@@ -1,6 +1,6 @@
 import Blog from "./Blog";
 import {useSelector,useDispatch} from "react-redux";
-import {clearFilters} from "../redux/blog-filters/actions";
+import {clearCategoryFilter, clearSearchFilter, clearAuthorFilter, clearAllFilters} from "../redux/blog-filters/actions";
 
 const BlogGrid = () => {
     const dispatch = useDispatch();
@@ -8,17 +8,36 @@ const BlogGrid = () => {
     const filters = useSelector(state => state.filters);
 
     const {search, category, author} = filters;
-    const handleClearFilters = () => {
-        dispatch(clearFilters());
+
+    const handleClearCategoryFilter = () => {
+        dispatch(clearCategoryFilter());
+    }
+
+    const handleClearSearchFilter = () => {
+        dispatch(clearSearchFilter());
+    }
+
+    const handleClearAuthorFilter = () => {
+        dispatch(clearAuthorFilter());
+    }
+
+    const handleClearAllFilters = () => {
+        dispatch(clearAllFilters());
     }
 
     return (
         <>
             {
-
+                search && (<span onClick={handleClearSearchFilter} className="text-red-600 mx-2 font-medium cursor-pointer">&#10005; {search}</span>)
             }
             {
-                search || category || author ? (<span onClick={handleClearFilters} className="text-red-600 font-medium cursor-pointer">&#10005; Clear Filter</span>) : ''
+                category && (<span onClick={handleClearCategoryFilter} className="text-red-600 mx-2 font-medium cursor-pointer">&#10005; {category}</span>)
+            }
+            {
+                author && (<span onClick={handleClearAuthorFilter} className="text-red-600 mx-2 font-medium cursor-pointer">&#10005; {author}</span>)
+            }
+            {
+                search || category || author ? (<span onClick={handleClearAllFilters} className="text-red-600 mx-2 font-medium cursor-pointer">&#10005; Clear All Filter</span>) : ''
             }
             <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
                 {
