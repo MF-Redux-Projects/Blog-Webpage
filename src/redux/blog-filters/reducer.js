@@ -1,12 +1,15 @@
 import {SEARCHFILTER, AUTHORFILTER, CATEGORYFILTER} from "./action-types";
 import {initialState} from "./initial-state";
 
-const reducer = (state = initialState, action) => {
+const filterReducer = (state = initialState, action) => {
     switch (action.type) {
         case SEARCHFILTER:
             return {
                 ...state,
-                blogs: state.blogs.filter(blog => blog.title.includes(action.search))
+                filter: {
+                    ...state.filter,
+                    search: action.search
+                }
             }
         case AUTHORFILTER:
             return {
@@ -23,4 +26,4 @@ const reducer = (state = initialState, action) => {
     }
 }
 
-export default reducer;
+export default filterReducer;

@@ -1,7 +1,7 @@
-import reducer from "./blog-filters/reducer";
+import filterReducer from "./blog-filters/reducer";
 import {createStore} from "redux";
 import {composeWithDevTools} from "redux-devtools-extension";
 
-const store = createStore(reducer, composeWithDevTools());
+const store = createStore(filterReducer, composeWithDevTools());
 
 export default store;

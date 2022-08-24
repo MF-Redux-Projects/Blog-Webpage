@@ -1,4 +1,9 @@
 export const initialState = {
+    filter: {
+        search: '',
+        author: '',
+        category: ''
+    },
     blogs: [
         {
             id: 1,
