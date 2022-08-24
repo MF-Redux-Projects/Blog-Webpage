@@ -2,10 +2,12 @@ import Header from "./components/Header";
 import BlogGrid from "./components/BlogGrid";
 import Footer from "./components/Footer";
 import BlogSearch from "./components/BlogSearch";
+import {Provider} from "react-redux";
+import store from "./redux/store";
 
 function App() {
     return (
-        <>
+        <Provider store={store}>
             <Header/>
             <BlogSearch/>
 
@@ -29,7 +31,7 @@ function App() {
             </section>
 
             <Footer/>
-        </>
+        </Provider>
     );
 }
 
