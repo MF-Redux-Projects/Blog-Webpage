@@ -1,4 +1,4 @@
-import {SEARCHFILTER, CATEGORYFILTER, AUTHORFILTER} from "./action-types";
+import {SEARCHFILTER, CATEGORYFILTER, AUTHORFILTER, CLEARSEARCHFILTER, CLEARCATEGORYFILTER, CLEARAUTHORFILTER, CLEARALLFILTERS} from "./action-types";
 
 export const searchFilter = (search) => {
     return {
@@ -20,3 +20,6 @@ export const authorFilter = (author) => {
         author
     }
 }
+
+
+

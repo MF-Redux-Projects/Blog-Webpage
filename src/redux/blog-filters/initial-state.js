@@ -37,7 +37,7 @@ export const initialState = {
             minRead: '9 min read',
             publishedDate: '20 Mar, 2022',
             author: {
-                name: 'John Doe',
+                name: 'Robert Smith',
                 avatar: 'https://avatars.githubusercontent.com/u/73503432?v=4'
             }
         },
@@ -49,7 +49,7 @@ export const initialState = {
             minRead: '5 min read',
             publishedDate: '20 Sep, 2022',
             author: {
-                name: 'Robert Smith',
+                name: 'John Doe',
                 avatar: 'https://avatars.githubusercontent.com/u/73503432?v=4'
             }
         },

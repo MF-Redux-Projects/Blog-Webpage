@@ -17,11 +17,9 @@ const debounce = (fn, delay) => {
 
 const BlogSearch = () => {
     const dispatch = useDispatch();
-    const [input, setInput] = useState('');
 
     const handleInputChange = (e) => {
-        setInput(e.target.value);
-        dispatch(searchFilter(input));
+        dispatch(searchFilter(e.target.value));
     }
 
     const debouncedHandleInputChange = debounce(handleInputChange, 500);

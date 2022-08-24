@@ -23,7 +23,7 @@ const Blog = ({blog}) => {
                 <div className="flex-1">
                     <p className="text-sm font-medium text-indigo-600">
                         <span
-                            className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800"
+                            className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 cursor-pointer"
                             onClick={() => handleCategoryFilter(category)}
                         >
                             {category}
@@ -36,7 +36,7 @@ const Blog = ({blog}) => {
                 <div className="mt-6 flex items-center">
                     <div className="flex-shrink-0">
                         <img
-                            className="h-10 w-10 rounded-full"
+                            className="h-10 w-10 rounded-full cursor-pointer"
                             src={author.avatar}
                             alt={author.name}
                             onClick={() => handleAuthorFilter(author.name)}
@@ -44,7 +44,7 @@ const Blog = ({blog}) => {
                     </div>
                     <div className="ml-3">
                         <p
-                            className="text-sm font-medium text-gray-900 hover:underline"
+                            className="text-sm font-medium text-gray-900 hover:underline cursor-pointer"
                             onClick={() => handleAuthorFilter(author.name)}
                         >
                             {author.name}
