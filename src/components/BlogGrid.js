@@ -15,6 +15,8 @@ const BlogGrid = () => {
 
     const handleClearSearchFilter = () => {
         dispatch(clearSearchFilter());
+        //clear the input field
+        document.getElementById("blog-search").value = "";
     }
 
     const handleClearAuthorFilter = () => {
@@ -23,6 +25,8 @@ const BlogGrid = () => {
 
     const handleClearAllFilters = () => {
         dispatch(clearAllFilters());
+        //clear the input field
+        document.getElementById("blog-search").value = "";
     }
 
     return (
@@ -45,9 +49,7 @@ const BlogGrid = () => {
                         .filter(blog => blog.title.toLowerCase().includes(filters.search.toLowerCase()))
                         .filter(blog => filters.category === '' || blog.category === filters.category)
                         .filter(blog => filters.author === '' || blog.author.name === filters.author)
-                        .map(blog => (
-                            <Blog key={blog.id} blog={blog}/>
-                        ))
+                        .map(blog => <Blog key={blog.id} blog={blog}/>)
                 }
             </div>
         </>
