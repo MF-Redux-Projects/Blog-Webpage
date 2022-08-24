@@ -1,5 +1,5 @@
 import {useDispatch} from "react-redux";
-import {categoryFilter, authorFilter} from "../redux/filters/actions";
+import {categoryFilter, authorFilter} from "../redux/blog-filters/actions";
 
 const Blog = ({blog}) => {
     const dispatch = useDispatch();

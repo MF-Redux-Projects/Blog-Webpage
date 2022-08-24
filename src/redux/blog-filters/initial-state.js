@@ -1,5 +1,5 @@
 export const initialState = {
-    filter: {
+    filters: {
         search: '',
         author: '',
         category: ''
