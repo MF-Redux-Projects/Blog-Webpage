@@ -1,4 +1,4 @@
-import {SEARCHFILTER, AUTHORFILTER, CATEGORYFILTER, CLEARFILTERS} from "./action-types";
+import {SEARCHFILTER, AUTHORFILTER, CATEGORYFILTER, CLEARSEARCHFILTER, CLEARCATEGORYFILTER, CLEARAUTHORFILTER, CLEARALLFILTERS} from "./action-types";
 import {initialState} from "./initial-state";
 
 const filterReducer = (state = initialState, action) => {
@@ -25,6 +25,30 @@ const filterReducer = (state = initialState, action) => {
                 filters: {
                     ...state.filters,
                     category: action.category
+                }
+            }
+        case CLEARSEARCHFILTER:
+            return {
+                ...state,
+                filters: {
+                    ...state.filters,
+                    search: ''
+                }
+            }
+        case CLEARCATEGORYFILTER:
+            return {
+                ...state,
+                filters: {
+                    ...state.filters,
+                    category: ''
+                }
+            }
+        case CLEARAUTHORFILTER:
+            return {
+                ...state,
+                filters: {
+                    ...state.filters,
+                    author: ''
                 }
             }
         default:
